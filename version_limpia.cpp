@@ -322,18 +322,16 @@ void Estat_Joc(vector<int>& Ultim_Posicio, Matriu& Columnes,Matriu& Magatzem, ve
         string col = Columnes[i][12];
         string b = Columnes[i][0];
         
-        if(b != " "){
-            cout<<"Col "<<i+1<<": ";
-            for( unsigned int j = 0; j < y; ++j){ // cambio de j<= y a j<y
-                //Inv:
+        if(y == 0){ 
+            cout<<"Col "<<i+1<<": -";  
+        } else if(b != " "){  
+           cout<<"Col "<<i+1<<": ";
+           for( unsigned int j = 0; j < y; ++j){
                 string Carta_Temp = Columnes[i][j];
                 cout<<conversor_simbol(Carta_Temp);
-                if(j < y-1) cout<<" "; // cambio j<12 a j<y
+                if(j < y-1) cout<<" ";
             }
-        } 
-        else if(b[0] == ' '){
-           cout<<"Col "<<i+1<<": -"; 
-        } 
+        }
     cout<<endl;
     }
     cout<<"---"<<endl;
